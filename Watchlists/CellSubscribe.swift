@@ -13,17 +13,12 @@ import UIKit
 
 class CellSubscribe: UITableViewCell {
 
+    @IBOutlet weak var NameLBL: UILabel!
+    @IBOutlet weak var TypeLBL: UILabel!
+  
+    @IBOutlet weak var SubscribeSWT: UISwitch!
     
-    @IBOutlet var NameLBL: UILabel!
     
-    
-    
-    @IBOutlet var TypeLBL: UILabel!
-    
-        
-    @IBOutlet var SubscribeSWT: UISwitch!
-       
-   
    
     
     override func awakeFromNib() {
