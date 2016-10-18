@@ -11,15 +11,15 @@ import UIKit
 class ViewControllerSettings: UIViewController {
 
     //link UI elements
-    @IBOutlet weak var SettingsConnectionStatusFLD: UILabel!
+    
+    
     @IBOutlet weak var SettingsConnectionUserFLD: UITextField!
     @IBOutlet weak var SettingsConnectionPasswordFLD: UITextField!
     @IBOutlet weak var SettingsConnectionURLFLD: UITextField!
+    @IBOutlet weak var SettingsConnectionStatusFLD: UILabel!
     
-    @IBOutlet var NavBAR: UINavigationBar?
-    
-    
-    
+    @IBOutlet weak var NavBar: UINavigationBar!
+
     
     
     override func viewDidLoad() {
@@ -45,12 +45,14 @@ class ViewControllerSettings: UIViewController {
     
     
     
+   
     @IBAction func resignKeyboard(sender: AnyObject) {
         _ = sender.resignFirstResponder()
     }
     
     
-    @IBAction func SettingsConnectionTestBTN(_ sender: AnyObject) {
+    @IBAction func SyncNowBTN(_ sender: AnyObject) {
+   
         
         //Save settings
         
@@ -61,10 +63,10 @@ class ViewControllerSettings: UIViewController {
         SettingsConnectionStatusFLD.text=Globals.sharedGlobal.connectionStatus
         if (Globals.sharedGlobal.connectionStatus=="Connected")
         {
-            NavBAR?.backgroundColor=UIColor.green
+            NavBar?.backgroundColor=UIColor.green
         }
         else
-        {NavBAR?.backgroundColor=UIColor.red
+        {NavBar?.backgroundColor=UIColor.red
         }
         
         
