@@ -252,7 +252,7 @@ class Globals {
             {
                 //get Token
                 let s = Just.post(JDEURL + "/jderest/tokenrequest", json:["password":JDEPassword,".type":" com.oracle.e1.jdemf.LoginRequest","ssoEnabled":false,"applicationName":"M03015","username":JDEUser,"role":JDEdefaultRole,"environment":JDEdefaultEnvironment,"jasserver":JDEdefaultJasServer,"deviceName":UIDevice.current.name])
-                //     print("token request result: " + s.text!)
+                //print("token request result: " + s.text!)
                 if (s.ok) {
                     if let data = s.text!.data(using: String.Encoding.utf8) {
                         let json = JSON(data: data)
@@ -279,7 +279,7 @@ class Globals {
                             for item in json["udoObjects"].arrayValue {
                                 // print ("Type: " + item["group"].stringValue)
                                 let WatchlistGroup=item["group"].stringValue
-                                //  print (index , WatchlistGroup)
+                                 // print (index , WatchlistGroup)
                                 for wlitem in item["items"].arrayValue{
                                     let ItemName = wlitem["name"].stringValue
                                     let ItemDescription = wlitem["description"].stringValue
@@ -294,13 +294,13 @@ class Globals {
                                     let ItemOnDashboard=false
                                     RetreivedlistForRevomal.append(OmwObjectName)
                                     var appendAction=true
-                                    //print(OmwObjectName)
+                                   // print(OmwObjectName)
                                     for appendCheckItem in Globals.sharedGlobal.allWatchlists
                                     {
                                         //check if append is needed
                                         if (appendCheckItem.omwObjectName==OmwObjectName) {
                                             //  appendAction=false
-                                            // print (OmwObjectName + " already Exists, not adding")
+                                             //print (OmwObjectName + " already Exists, not adding")
                                             appendAction=false
                                         }
                                     }
@@ -389,7 +389,7 @@ class Globals {
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss"
                     print(formatter.string(from: now as Date))
-                    
+                    Globals.saveWatchlists()
                     Globals.sharedGlobal.lastUpdated="Last updated: " + formatter.string(from: now as Date)
                     
                 }

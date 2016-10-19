@@ -11,8 +11,9 @@ import UIKit
 
 class TableControllerDashboard: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet var lastUpdateLBL: UILabel!
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var lastUpdateLBL: UILabel!
+   
+    @IBOutlet weak var tableView: UITableView!
     
     func keepUpdating(){
         

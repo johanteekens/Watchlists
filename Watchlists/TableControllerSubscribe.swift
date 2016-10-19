@@ -9,8 +9,9 @@ import UIKit
 class TableControllerSubscribe: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var refreshControl = UIRefreshControl()
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
+   
     override func viewDidLoad() {
         
         super.viewDidLoad()
