@@ -19,9 +19,7 @@ class ViewControllerSettings: UIViewController {
     @IBOutlet weak var SettingsConnectionStatusFLD: UILabel!
     
     @IBOutlet weak var NavBar: UINavigationBar!
-
-    
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,8 +49,8 @@ class ViewControllerSettings: UIViewController {
     }
     
     
-    @IBAction func SyncNowBTN(_ sender: AnyObject) {
-   
+    @IBAction func SynNowBTN(_ sender: AnyObject) {
+    
         
         //Save settings
         
@@ -72,8 +70,8 @@ class ViewControllerSettings: UIViewController {
         
     }
     
-    
-    @IBAction func SettingsConnectionSaveBTN(_ sender: AnyObject) {
+    @IBAction func SaveBTN(_ sender: AnyObject) {
+   
         
         Globals.sharedGlobal.password = SettingsConnectionPasswordFLD.text! as String
         Globals.sharedGlobal.username = SettingsConnectionUserFLD.text! as String

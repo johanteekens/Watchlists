@@ -11,9 +11,27 @@ import UIKit
 
 
 class ViewControllerAbout: UIViewController {
-
     
     
+    @IBAction func OpenSteltixURLBTN(_ sender: AnyObject) {
+    
+    openURL (scheme: "http://www.steltix.com")
+    }
+    
+    func openURL(scheme: String) {
+        if let url = URL(string: scheme) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:],
+                                          completionHandler: {
+                                            (success) in
+                                            print("Open \(scheme): \(success)")
+                })
+            } else {
+                let success = UIApplication.shared.openURL(url)
+                print("Open \(scheme): \(success)")
+            }
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -28,5 +46,5 @@ class ViewControllerAbout: UIViewController {
     }
     
     
-
+    
 }

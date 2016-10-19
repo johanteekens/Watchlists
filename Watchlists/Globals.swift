@@ -405,8 +405,7 @@ class Globals {
         }
     }
     
-    
-    
+        
     
 }
 
