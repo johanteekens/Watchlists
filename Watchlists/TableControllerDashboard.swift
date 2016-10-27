@@ -17,7 +17,7 @@ class TableControllerDashboard: UIViewController, UITableViewDelegate, UITableVi
     
     func keepUpdating(){
         
-        print("just refresh table")
+       // print("just refresh table")
         Globals.updateDashboardWatchlists()
         self.tableView.reloadData()
         var connectionStatus=""
@@ -28,7 +28,7 @@ class TableControllerDashboard: UIViewController, UITableViewDelegate, UITableVi
             print("Start update on background thread")
             Globals.updateWatchlists()
             
-            self.tableView.reloadData()
+           // self.tableView.reloadData()
             var connectionStatus=""
             if (Globals.sharedGlobal.connectionStatus=="Connected") {connectionStatus="Online   "} else {connectionStatus="Offline   "}
             self.lastUpdateLBL.text=connectionStatus + Globals.sharedGlobal.lastUpdated
