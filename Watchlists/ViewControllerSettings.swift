@@ -22,7 +22,7 @@ class ViewControllerSettings: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
         
         
         
@@ -31,7 +31,16 @@ class ViewControllerSettings: UIViewController {
         SettingsConnectionURLFLD.text  = Globals.sharedGlobal.URL
     }
     
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+   
     
     
     override func didReceiveMemoryWarning() {

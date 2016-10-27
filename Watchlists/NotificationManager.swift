@@ -33,7 +33,7 @@ class NotificationManager: NSObject {
         let notificationRequest = UNNotificationRequest(identifier: notificationRequestIdentifier, content: notificationContent, trigger: trigger)
         UNUserNotificationCenter.current().add(notificationRequest) { (error) in
             // handle the error if needed
-            print(error)
+            print(error as Any)
         }
     }
 }
